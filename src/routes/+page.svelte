@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { Button, Hr, Popover, Card } from "flowbite-svelte";
+    import { Button, Hr, Popover, Card, Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell } from "flowbite-svelte";
     import { PlaySolid, SunOutline } from "flowbite-svelte-icons"	
     import Icon from "@iconify/svelte";
     import { fade, blur } from "svelte/transition";
@@ -28,12 +28,54 @@
         <div style="background-image: url({gif});" class="size-full bg-cover flex-col items-baseline content-end p-6" transition:fade={{ duration: 300 }}>
             <h1 class="text-white mt-auto mb-0 text-4xl font-semibold tracking-tighter text-heading sm:text-4x1 md:text-5xl lg:text-6xl">Who is ShipmasterKyle</h1>
             <p class="text-base font-normal text-body px-2 py-2 md:text-xl text-white">Gabriel Thompson aka ShipmasterKyle, is a self-taught programmer currently leading development on the Cubix Infinite. He started programming back in 2019 and is currently studying Computer Science at Fort Valley State University to polish his skills. He's the founder and  <b>lead Software Engineer</b> at <b>Cubix Entertainment</b> where he contributes to building a new indie console. </p>
-            <br>
             <p class="text-base font-normal text-body px-2 py-2 md:text-xl text-white">Outside of work Gabriel is a musician where he both plays a variety of percussive and string instruments including piano, drums and guitar and creates original music as a producer. He's also a retired roblox band director (2021-2025), as well as the founder of the Roblox Music Assoication.</p>
             <p class="text-base font-normal text-body px-2 py-2 md:text-xl text-white">During his time at Fort Valley as an undergrad student, he'd like to improve as a Software Engineer with a formal education. He's most interested in Software Engineering and Game development although he's also spent researching Cybersecurity. Gabriel has spent several years working as a freelance programmer although his primary project at Cubix began in 2023.</p>
-            <Hr class="mx-auto my-4 h-1 w-48 rounded-sm md:my-10" />
+            <!-- <Hr class="mx-auto my-4 h-1 w-48 rounded-sm md:my-10" /> -->
             <h2 class="text-white mt-auto mb-0 text-4xl font-semibold tracking-tighter text-heading text-4x1">Technical Skills</h2>
+            <Table>
+                <TableHead class="bg-slate-800">
+                    <TableHeadCell>Skill</TableHeadCell>
+                    <TableHeadCell>Skill Level</TableHeadCell>
+                    <TableHeadCell>Skill Since</TableHeadCell>
+                </TableHead>
+                <TableBody class="text-slate-300">
+                    <TableBodyRow class="bg-slate-700">
+                    <TableBodyCell>Lua Programming</TableBodyCell>
+                    <TableBodyCell>Advanced</TableBodyCell>
+                    <TableBodyCell>2019</TableBodyCell>
+                    </TableBodyRow>
+                    <TableBodyRow class="bg-slate-600">
+                    <TableBodyCell>Web Development (Svelte)</TableBodyCell>
+                    <TableBodyCell>Intermediate</TableBodyCell>
+                    <TableBodyCell>2023</TableBodyCell>
+                    </TableBodyRow>
+                    <TableBodyRow class="bg-slate-700">
+                    <TableBodyCell>C Programming</TableBodyCell>
+                    <TableBodyCell>Intermediate</TableBodyCell>
+                    <TableBodyCell>2024</TableBodyCell>
+                    </TableBodyRow>
+                    <TableBodyRow class="bg-slate-600">
+                    <TableBodyCell>Python Programming</TableBodyCell>
+                    <TableBodyCell>Developing</TableBodyCell>
+                    <TableBodyCell>2021</TableBodyCell>
+                    </TableBodyRow>
+                    <TableBodyRow class="bg-slate-700">
+                    <TableBodyCell>Javascript/Typescript Programming</TableBodyCell>
+                    <TableBodyCell>Developing</TableBodyCell>
+                    <TableBodyCell>2024</TableBodyCell>
+                    </TableBodyRow>                    <TableBodyRow class="bg-slate-600">
+                    <TableBodyCell>Unix System Management</TableBodyCell>
+                    <TableBodyCell>Intermediate</TableBodyCell>
+                    <TableBodyCell>2024</TableBodyCell>
+                    </TableBodyRow>
+                    <TableBodyRow class="bg-slate-700">
+                    <TableBodyCell>Database Management</TableBodyCell>
+                    <TableBodyCell>Intermediate</TableBodyCell>
+                    <TableBodyCell>2024</TableBodyCell>
+                    </TableBodyRow>
 
+                </TableBody>
+            </Table>
         </div>
     {:else if page == 1}
         <div class="size-full bg-baby flex flex-col items-baseline content-end" transition:fade={{ duration: 300 }}>
@@ -328,8 +370,10 @@
         </div>
     {:else if page == 3}
         <div class="size-full bg-gold p-6" transition:fade={{ duration: 300 }}>
-            <h1 class="text-white mb-0 text-4xl font-semibold tracking-tighter text-heading sm:text-4x1 md:text-5xl lg:text-6xl">Who is ShipmasterKyle</h1>
-            
+            <h1 class="text-white mb-0 text-4xl font-semibold tracking-tighter text-heading sm:text-4x1 md:text-5xl lg:text-6xl">Freshman Reflection</h1>
+            <p class="text-normal text-white">
+                In my first real year of being a computer science program, I've learned a lot of interesting things about it. My primary reason for coming to a university to major in something I've already been doing professionally for years for to get a formal education to "fill in the gaps" left by my self teaching. I did admitably, find a lot of the entry level topics boring (you can only learn about what a CPU is so many times) but I did still get a lot out of it. I got to rediscover my love for Hexadecimal and reading an ASCII table. I think binary math was one of the most interesting topics I've learned this year. That said, the biggest challenege early on has been staying engaged. Theres so much overlap of things I already know, but staying engaged lets me enjoy the things I didn't know much about. As for my programming skills, I think I'm too far gone in my programming "style" for any outside source to drastically change how I write code. I don't believe my problem solving process has changed much this year either. The skills I need to develop are languages I've thrown to the wayside while focusing on the ones I love the most. I really want to develop my C programming skills since thats what I primarily use on a day to day basis. My social skills and ability to work with others also needs to improve but that will in time. 
+            </p>
         </div>  
     {/if}
     </section>
