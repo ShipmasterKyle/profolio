@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { Button, Hr, Popover, Card, Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell } from "flowbite-svelte";
+    import { Button, Footer, FooterCopyright, Popover, Card, Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell } from "flowbite-svelte";
     import { PlaySolid, SunOutline } from "flowbite-svelte-icons"	
     import Icon from "@iconify/svelte";
     import { fade, blur } from "svelte/transition";
@@ -402,3 +402,4 @@
         
     </section>
 </main>
+<FooterCopyright class="bg-baby text-center border-0 text-white" href="/" by="Gabriel Thompson" year={2026} />
