@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { Button, Hr, Popover } from "flowbite-svelte";
+    import { Button, Hr, Popover, Card } from "flowbite-svelte";
     import { PlaySolid, SunOutline } from "flowbite-svelte-icons"	
     import Icon from "@iconify/svelte";
     import { fade, blur } from "svelte/transition";
@@ -17,28 +17,30 @@
     import slw from "#lib/assets/slw.jpg"
     import pb from "#lib/assets/pixel-brwl.png"
     import pl from "#lib/assets/Pokemon Legends Logo.png"
-    let page = $state(2);
+    import gif from "#lib/assets/isle.gif"
+    let page = $state(0);
 </script>
+
 
 <main class="grid h-screen grid-cols-1 md:grid-cols-2 font-sans">
     <section class="w-full h-full">
     {#if page == 0}
-        <div class="size-full bg-gold p-6" transition:fade={{ duration: 300 }}>
-            <h1 class="text-white mb-0 text-4xl font-semibold tracking-tighter text-heading sm:text-4x1 md:text-5xl lg:text-6xl">Who is ShipmasterKyle</h1>
+        <div style="background-image: url({gif});" class="size-full bg-cover flex-col items-baseline content-end p-6" transition:fade={{ duration: 300 }}>
+            <h1 class="text-white mt-auto mb-0 text-4xl font-semibold tracking-tighter text-heading sm:text-4x1 md:text-5xl lg:text-6xl">Who is ShipmasterKyle</h1>
             <p class="text-base font-normal text-body px-2 py-2 md:text-xl text-white">Gabriel Thompson aka ShipmasterKyle, is a self-taught programmer currently leading development on the Cubix Infinite. He started programming back in 2019 and is currently studying Computer Science at Fort Valley State University to polish his skills. He's the founder and  <b>lead Software Engineer</b> at <b>Cubix Entertainment</b> where he contributes to building a new indie console. </p>
             <br>
             <p class="text-base font-normal text-body px-2 py-2 md:text-xl text-white">Outside of work Gabriel is a musician where he both plays a variety of percussive and string instruments including piano, drums and guitar and creates original music as a producer. He's also a retired roblox band director (2021-2025), as well as the founder of the Roblox Music Assoication.</p>
-            <Hr class="mx-auto my-4 h-1 w-48 rounded-sm md:my-10" />
-
             <p class="text-base font-normal text-body px-2 py-2 md:text-xl text-white">During his time at Fort Valley as an undergrad student, he'd like to improve as a Software Engineer with a formal education. He's most interested in Software Engineering and Game development although he's also spent researching Cybersecurity. Gabriel has spent several years working as a freelance programmer although his primary project at Cubix began in 2023.</p>
+            <Hr class="mx-auto my-4 h-1 w-48 rounded-sm md:my-10" />
+            <h2 class="text-white mt-auto mb-0 text-4xl font-semibold tracking-tighter text-heading text-4x1">Technical Skills</h2>
+
         </div>
     {:else if page == 1}
         <div class="size-full bg-baby flex flex-col items-baseline content-end" transition:fade={{ duration: 300 }}>
             <div class="w-full grid grid-cols-3 lg:grid-cols-4 gap-4 p-6 lg:py-2 mb-0">
-                <Button id="popover-cb" class="col-span-3">
+                <Button id="popover-cb" class="col-span-3 lg:col-span-4">
                     <div class="size-full">
                         <img class="size-fill rounded-xl" src={cbx} alt="Sonic Earth">
-                        
                     </div>
                 </Button>
 
@@ -245,31 +247,109 @@
         </Popover>
     {:else if page == 2}
         <div class="size-full bg-gray-950 p-6" transition:fade={{ duration: 300 }}>
-            <h1 class="text-center text-black mb-0 text-4xl font-semibold tracking-tighter text-heading md:text-5xl lg:text-6xl">Academic Profile</h1>
-            <div class="mb-1 text-base font-medium text-heading">Large</div>
-                <div class="w-full bg-zinc-500 rounded-full h-2.5">
-                <div class="bg-blue-300 h-2.5 rounded-full" style="width: 45%"></div>
+            <h1 class="text-center text-white mb-0 text-4xl font-semibold tracking-tighter text-heading md:text-5xl lg:text-6xl">Academic Profile</h1>
+            <div class="mb-1 text-base font-medium text-heading">
+                <h2 class="text-3xl text-slate-200">Graduation Progress (49%)</h2>
+            </div>
+            <div class="w-full bg-zinc-500 rounded-full h-2.5">
+                <div class="bg-blue-300 h-2.5 rounded-full" style="width: 49%"></div>
+            </div>
+            <br>
+            <p class="text-slate-200 mt-2">As of November 2026, I have completed 49% of my degree's coursework reqork. Out of the classes completed only one has direct relationship to my major. At the expected pace I'm taking courses (with an average 17 credit hours) I should graduate Spring 2028.</p>
+
+            <br><br>
+            <h3 class="text-white mb-0 text-4xl font-semibold tracking-tighter text-heading">Courses Remaining</h3>
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                <Card class="bg-green-400 border-0 p-4 sm:p-6 md:p-8">
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-950">CSCI 1301</h5>
+                    <p class="font-normal text-black">Principles of Programming I</p>
+                </Card>
+                <Card class="bg-amber-400 border-0 p-4 sm:p-6 md:p-8">
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-950">CSCI 1302</h5>
+                    <p class="font-normal text-black">Principles of Programming II</p>
+                </Card>
+                <Card class="bg-amber-400 border-0 p-4 sm:p-6 md:p-8">
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-950">CSCI 2201</h5>
+                    <p class="font-normal text-black">Digital Fundamentals</p>
+                </Card>
+                <Card class="bg-amber-400 border-0 p-4 sm:p-6 md:p-8">
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-950">CSCI 1102</h5>
+                    <p class="font-normal text-black">CSCI & CSIS: An Overview</p>
+                </Card>
+                <Card class="bg-red-400 border-0 p-4 sm:p-6 md:p-8">
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-950">MATH 1154</h5>
+                    <p class="font-normal text-black">Calculus I</p>
+                </Card>
+                <Card class="bg-red-400 border-0 p-4 sm:p-6 md:p-8">
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-950">MATH 2253</h5>
+                    <p class="font-normal text-black">Discrete Math</p>
+                </Card>
+                <Card class="bg-red-400 border-0 p-4 sm:p-6 md:p-8">
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-950">MATH 1401</h5>
+                    <p class="font-normal text-black">Elementary Statistics</p>
+                </Card>
+                <Card class="bg-red-400 border-0 p-4 sm:p-6 md:p-8">
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-950">CSCI 3150</h5>
+                    <p class="font-normal text-black">Data Communication and Networks</p>
+                </Card>
+                <Card class="bg-red-400 border-0 p-4 sm:p-6 md:p-8">
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-950">CSCI 3331</h5>
+                    <p class="font-normal text-black">C Unix</p>
+                </Card>
+                <Card class="bg-red-400 border-0 p-4 sm:p-6 md:p-8">
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-950">CSCI 3351</h5>
+                    <p class="font-normal text-black">Comp Organization/Assembly Language</p>
+                </Card>
+                <Card class="bg-red-400 border-0 p-4 sm:p-6 md:p-8">
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-950">CSCI 3410</h5>
+                    <p class="font-normal text-black">Data Structures</p>
+                </Card>
+                <Card class="bg-red-400 border-0 p-4 sm:p-6 md:p-8">
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-950">CSIS 3743</h5>
+                    <p class="font-normal text-black">Web Development</p>
+                </Card>
+                <Card class="bg-red-400 border-0 p-4 sm:p-6 md:p-8">
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-950">CSCI 4320</h5>
+                    <p class="font-normal text-black">Software Engineering</p>
+                </Card>
+                <Card class="bg-red-400 border-0 p-4 sm:p-6 md:p-8">
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-950">CSCI 4340</h5>
+                    <p class="font-normal text-black">Principles of Operating Systems</p>
+                </Card>
+                <Card class="bg-red-400 border-0 p-4 sm:p-6 md:p-8">
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-950">CSCI 4520</h5>
+                    <p class="font-normal text-black">Analysis of Algorithms</p>
+                </Card>
+                <Card class="bg-red-400 border-0 p-4 sm:p-6 md:p-8">
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-950">CSIS 4720</h5>
+                    <p class="font-normal text-black">Database Systems</p>
+                </Card>
             </div>
         </div>
+    {:else if page == 3}
+        <div class="size-full bg-gold p-6" transition:fade={{ duration: 300 }}>
+            <h1 class="text-white mb-0 text-4xl font-semibold tracking-tighter text-heading sm:text-4x1 md:text-5xl lg:text-6xl">Who is ShipmasterKyle</h1>
+            
+        </div>  
     {/if}
     </section>
 
     <section class="min-h-50dvh bg-black md:min-h-dvh flex flex-col justify-center items-center gap-4 md:gap-6 px-2">
     <div class="w-full flex justify-center items-center gap-4 md:gap-6 px-2">
         <div class="w-1/3 grid grid-cols-2 grid-rows-3 gap-2 lg:gap-0">
-        <button class="col-start-2 rounded-full ring-2 ring-gold" onclick={() => {page = 1}}>
+        <button class="cursor-pointer col-start-2 rounded-full ring-2 ring-gold" onclick={() => {page = 1}}>
             <img class="size-full aspect-square rounded-full object-cover" src={drg} alt="Drgametime3d">
         </button>
 
-        <button class="rounded-full ring-2 ring-gold" onclick={() => {page = 2}}>
+        <button class="cursor-pointer rounded-full ring-2 ring-gold" onclick={() => {page = 2}}>
             <img class="size-full aspect-square rounded-full object-cover" src={ship} alt="ShipmasterKyle">
         </button>
 
-        <button class="col-start-2 row-start-3 rounded-full ring-2 ring-gold" onclick={() => {page = 3}}>
+        <button class="cursor-pointer col-start-2 row-start-3 rounded-full ring-2 ring-gold" onclick={() => {page = 3}}>
             <img class="size-full aspect-square rounded-full object-cover" src={goat} alt="the_true_illusion">
         </button>
         </div>
-        <button class="w-2/3" onclick={() => {page = 0}}>
+        <button class="cursor-pointer w-2/3" onclick={() => {page = 0}}>
         <img class="size-full aspect-square rounded-full object-cover border-4 border-gold" src={me} alt="Gabriel Thompson">
         </button>
     </div>
